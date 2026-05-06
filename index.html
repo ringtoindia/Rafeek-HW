@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Warming Ceremony - SabiRaZ</title>
+    <style>
+        /* Modern Reset & Elegant Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fcfbf7;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        header .gratitude {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            color: #f3e8ee;
+            font-weight: 600;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin: 15px 0;
+        }
+
+        header .house-name {
+            font-size: 3.2rem;
+            color: #dfb76c;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Elegant Cards */
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            text-align: center;
+            border: 1px solid #f1ebd9;
+        }
+
+        h2 {
+            color: #8c6d31;
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hosts {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 5px;
+        }
+
+        .children {
+            font-size: 0.95rem;
+            color: #718096;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Details Structure */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        @media(min-width: 480px) {
+            .details-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .full-width {
+                grid-column: span 2;
+            }
+        }
+
+        .detail-item h3 {
+            color: #a1824a;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .detail-item p {
+            font-size: 1.1rem;
+            color: #2d3748;
+        }
+
+        /* Countdown Timer */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .time-box {
+            background: #fdfbf7;
+            border: 1px solid #f0e6cc;
+            padding: 12px;
+            border-radius: 10px;
+            min-width: 75px;
+            font-size: 0.8rem;
+            color: #718096;
+            text-transform: uppercase;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #8c6d31;
+        }
+
+        /* RSVP Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 450px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fcfdfa;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #a1824a;
+            background-color: #fff;
+        }
+
+        button, .btn {
+            background-color: #8c6d31;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #6b5223;
+        }
+
+        .btn-call {
+            background-color: #fff;
+            color: #8c6d31;
+            border: 1px solid #8c6d31;
+            margin-top: 15px;
+        }
+        
+        .btn-call:hover {
+            background-color: #fcfaf2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #a0aec0;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="gratitude">With Hearts Full Of Gratitude</div>
+            <p>We Cordially Invite You To The</p>
+            <h1>House Warming Ceremony</h1>
+            <p>Of Our New Home</p>
+            <div class="house-name">"SabiRaZ"</div>
+        </header>
+
+        <section class="card">
+            <h2>Invited By</h2>
+            <p class="hosts">Mr. RAFEEK OLAVARA & MRS. SABIRA</p>
+            <p class="children">RASHA FATHIMA • ZENHA MEHRIN</p>
+        </section>
+
+        <section class="card">
+            <h2>Event Details</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h3>Date</h3>
+                    <p><strong>Thursday</strong><br>June 04, 2026</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Time</h3>
+                    <p><strong>11:00 AM</strong><br>Onwards</p>
+                </div>
+                <div class="detail-item full-width" style="margin-top: 10px; border-top: 1px solid #f5edd6; padding-top: 15px;">
+                    <h3>Venue Address</h3>
+                    <p>Near K K Masjid,<br>Kadangod</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Days to Celebration</h2>
+            <div id="countdown">
+                <div class="time-box"><span id="days">00</span>Days</div>
+                <div class="time-box"><span id="hours">00</span>Hrs</div>
+                <div class="time-box"><span id="minutes">00</span>Mins</div>
+                <div class="time-box"><span id="seconds">00</span>Secs</div>
+            </div>
+        </section>
+
+        <section class="card">
+
+
+            <hr style="border: 0; border-top: 1px solid #f5edd6; margin: 25px 0;">
+            
+            <p style="font-size: 0.9rem; color: #4a5568;">Need assistance or route info?</p>
+            <a href="tel:+919037521031" class="btn btn-call">📞 Contact: +91 9037521031</a>
+        </section>
+
+        <footer>
+            <p>© 2026 SabiRaZ House Warming Ceremony</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Target Date: June 4, 2026, at 11:00 AM
+        const countDownDate = new Date("Jun 4, 2026 11:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Math calculations for time segments
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output formatting logic
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            // If event arrives
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<h3 style='color: #8c6d31;'>Welcome to SabiRaZ! 🎉</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
