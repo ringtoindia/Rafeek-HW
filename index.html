@@ -38,13 +38,16 @@ body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;
 .c-tl{top:10px;left:10px}.c-tr{top:10px;right:10px;transform:scaleX(-1)}
 .c-bl{bottom:10px;left:10px;transform:scaleY(-1)}.c-br{bottom:10px;right:10px;transform:scale(-1,-1)}
 
-/* DIYA */
-.diya-row{text-align:center;margin-bottom:20px;animation:rise 1.2s .3s both}
-.diya{font-size:3rem;display:inline-block;animation:flamePulse 3s ease-in-out infinite}
-@keyframes flamePulse{0%,100%{filter:drop-shadow(0 0 8px #f9a82577);transform:scale(1)}50%{filter:drop-shadow(0 0 24px #f9a825cc);transform:scale(1.07)}}
+/* ISLAMIC SYMBOL */
+.icon-row{text-align:center;margin-bottom:20px;animation:rise 1.2s .3s both}
+.icon-row svg{display:inline-block;animation:islamicGlow 3s ease-in-out infinite}
+@keyframes islamicGlow{
+  0%,100%{filter:drop-shadow(0 0 8px #d4a84366);transform:scale(1) rotate(0deg)}
+  50%{filter:drop-shadow(0 0 22px #f0c96aaa);transform:scale(1.07) rotate(2deg)}
+}
 
 /* TEXT */
-.bismillah{font-family:'EB Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold2);text-align:center;letter-spacing:.1em;margin-bottom:22px;animation:rise 1.2s .38s both}
+.bismillah{font-family:'EB Garamond',serif;font-size:1.3rem;color:var(--gold2);text-align:center;letter-spacing:.06em;margin-bottom:22px;animation:rise 1.2s .38s both;direction:rtl;unicode-bidi:bidi-override;text-shadow:0 0 18px #d4a84344}
 .tagline{font-family:'Raleway',sans-serif;font-weight:200;letter-spacing:.34em;text-transform:uppercase;font-size:.63rem;color:var(--gold);text-align:center;margin-bottom:12px;animation:rise 1.2s .44s both}
 .gratitude-big{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:2rem;color:var(--cream);text-align:center;line-height:1.3;margin-bottom:6px;animation:rise 1.2s .5s both}
 .gratitude-big span{color:var(--gold2)}
@@ -172,8 +175,53 @@ body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;
     <circle cx="18" cy="18" r="2" fill="#f0c96a"/><circle cx="3" cy="3" r="3" fill="#d4a843"/>
   </svg>
 
-  <div class="diya-row"><span class="diya">🪔</span></div>
-  <p class="bismillah">﷽</p>
+  <!-- Islamic Symbol: Crescent Moon + Star -->
+  <div class="icon-row">
+    <svg width="88" height="88" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="45" cy="45" r="42" stroke="url(#ringG)" stroke-width="1" fill="none" opacity=".4"/>
+      <circle cx="45" cy="45" r="38" stroke="url(#ringG)" stroke-width=".5" fill="none" opacity=".2"/>
+      <path d="M46 13 C29 14 16 28 16 45 C16 62 29 76 46 77 C36 67 30 57 30 45 C30 33 36 23 46 13Z" fill="url(#cresG)"/>
+      <polygon points="68,18 71,27 80,27 73,33 76,42 68,36 60,42 63,33 56,27 65,27" fill="url(#starG)"/>
+      <defs>
+        <linearGradient id="cresG" x1="16" y1="13" x2="55" y2="77" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#f0c96a"/>
+          <stop offset="55%" stop-color="#d4a843"/>
+          <stop offset="100%" stop-color="#b8832a"/>
+        </linearGradient>
+        <linearGradient id="starG" x1="56" y1="18" x2="80" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#f5d980"/>
+          <stop offset="100%" stop-color="#d4a843"/>
+        </linearGradient>
+        <linearGradient id="ringG" x1="3" y1="3" x2="87" y2="87" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#f0c96a"/>
+          <stop offset="100%" stop-color="#b8832a"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <!-- Bismillah + Islamic decorative row -->
+  <div style="text-align:center;margin-bottom:8px;animation:rise 1.2s .34s both">
+    <svg width="260" height="22" viewBox="0 0 260 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="11" x2="80" y2="11" stroke="url(#lG)" stroke-width="1"/>
+      <polygon points="90,11 95,6 100,11 95,16" fill="#d4a843" opacity=".7"/>
+      <polygon points="160,11 165,6 170,11 165,16" fill="#d4a843" opacity=".7"/>
+      <line x1="180" y1="11" x2="260" y2="11" stroke="url(#rG)" stroke-width="1"/>
+      <circle cx="130" cy="11" r="3" fill="#f0c96a"/>
+      <circle cx="115" cy="11" r="1.5" fill="#d4a843" opacity=".6"/>
+      <circle cx="145" cy="11" r="1.5" fill="#d4a843" opacity=".6"/>
+      <defs>
+        <linearGradient id="lG" x1="0" y1="11" x2="80" y2="11" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#d4a843" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#d4a843" stop-opacity=".8"/>
+        </linearGradient>
+        <linearGradient id="rG" x1="180" y1="11" x2="260" y2="11" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#d4a843" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="#d4a843" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <p class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
   <p class="tagline">With Hearts Full of Gratitude</p>
   <p class="gratitude-big">House <span>Warming</span></p>
   <p class="invite-line">We Cordially Invite You</p>
